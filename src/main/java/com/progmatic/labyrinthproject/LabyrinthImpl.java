@@ -134,22 +134,25 @@ public class LabyrinthImpl implements Labyrinth {
 
         int row = playerCoordinate.getRow();
         int col = playerCoordinate.getCol();
-        if (row > 0 && lArr[row - 1][col] == CellType.END){
+        if (row > 0 && lArr[row - 1][col] == CellType.END) {
             possible.add(Direction.NORTH);
         }
-        if (row > 0 && lArr[row - 1][col] == CellType.EMPTY||lArr[row - 1][col] == CellType.END) {
+        if (row > 0 && lArr[row - 1][col] == CellType.EMPTY) {
             possible.add(Direction.NORTH);
-        }if (row < lArr.length - 1 && lArr[row + 1][col] == CellType.END){
+        }
+        if (row < lArr.length - 1 && lArr[row + 1][col] == CellType.END) {
             possible.add(Direction.SOUTH);
         }
         if (row < lArr.length - 1 && lArr[row + 1][col] == CellType.EMPTY) {
             possible.add(Direction.SOUTH);
-        }if (col > 0 && lArr[row][col - 1] == CellType.END){
+        }
+        if (col > 0 && lArr[row][col - 1] == CellType.END) {
             possible.add(Direction.WEST);
         }
         if (col > 0 && lArr[row][col - 1] == CellType.EMPTY) {
             possible.add(Direction.WEST);
-        }if (lArr[row][col + 1] == CellType.END&&col < lArr[row].length - 1){
+        }
+        if (lArr[row][col + 1] == CellType.END && col < lArr[row].length - 1) {
             possible.add(Direction.EAST);
         }
         if (col < lArr[row].length - 1 && lArr[row][col + 1] == CellType.EMPTY) {
